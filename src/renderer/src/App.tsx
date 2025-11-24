@@ -1,12 +1,20 @@
+import { Content, RootLayout, Sidebar } from './components'
+import { ActionButtons } from './components/ActionButtons'
+import { DragabbleTopBar } from './components/DragabbleTopBar'
+import { NotesPreviewList } from './components/NotesPreviewList'
 
-function App() {
+const App = () => {
   return (
-  
-    
-    <div className="flex h-full items-center justify-center">
-      <span className="text-4xl text-blue-500">Hello From NoteCraft</span>
-    </div>
-   
+    <>
+      <DragabbleTopBar />
+      <RootLayout>
+        <Sidebar className="p-2 border-t-4 border-yellow-500">
+          <ActionButtons className="flex justify-center mt-2" />
+          <NotesPreviewList className="mt-2 space-y-1" />
+        </Sidebar>
+        <Content className="border-l bg-zinc-900/50 border-l-white/20">Content</Content>
+      </RootLayout>
+    </>
   )
 }
 
