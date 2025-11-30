@@ -4,3 +4,5 @@ export * from './Button'
 export * from './DragabbleTopBar'
 
 export * from './NotesPreviewList'
+export * from './NotePreview'
+export * from './MarkdownEditor'

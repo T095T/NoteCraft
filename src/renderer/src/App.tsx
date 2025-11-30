@@ -8,7 +8,7 @@ const App = () => {
     <>
       <DragabbleTopBar />
       <RootLayout>
-        <Sidebar className="p-2 border-t-4 border-yellow-500">
+        <Sidebar className="p-2 border-t-2 border-yellow-500">
           <ActionButtons className="flex justify-center mt-2" />
           <NotesPreviewList className="mt-2 space-y-1" />
         </Sidebar>
