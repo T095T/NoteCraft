@@ -29,11 +29,11 @@
   }
 
   ::-webkit-scrollbar {
-    @apply w-2;
+    @apply w-2 h-10;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-[#555] rounded-md;
+    @apply bg-[#595b54] rounded-lg;
   }
 
   ::-webkit-scrollbar-track {

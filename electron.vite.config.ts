@@ -1,33 +1,40 @@
-import path, { resolve } from 'path'
+import path from 'path'
 import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   main: {
     plugins: [externalizeDepsPlugin()],
-    resolve:{
-      alias:{
-        '@/lib':resolve('src/shared/lib'),
-        '@/shared':resolve('src/shared'),
-        
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src/renderer/src'),
+        '@shared': path.resolve(__dirname, 'src/renderer/src/shared'),
       }
     }
   },
+
   preload: {
-    plugins: [externalizeDepsPlugin()]
-  },
-  renderer: {
-    assetsInclude:'src/renderer/assets/**',
+    plugins: [externalizeDepsPlugin()],
     resolve: {
       alias: {
-        '@renderer': resolve('src/renderer/src'),
-        '@shared': resolve('src/shared'),
-        '@/hooks': resolve('src/renderer/src/hooks'),
-        '@/assets': resolve('src/renderer/src/assets'),
-        '@/store': resolve('src/renderer/src/store'),
-        '@/components': resolve('src/renderer/src/components'),
-        '@/mocks': resolve('src/renderer/src/mocks'),
-        "@": path.resolve(__dirname, "src/renderer/src")
+        '@': path.resolve(__dirname, 'src/renderer/src'),
+        '@shared': path.resolve(__dirname, 'src/renderer/src/shared'),
+      }
+    }
+  },
+
+  renderer: {
+    assetsInclude: 'src/renderer/assets/**',
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src/renderer/src'),
+        '@shared': path.resolve(__dirname, 'src/renderer/src/shared'),
+        '@renderer': path.resolve(__dirname, 'src/renderer/src'),
+        '@/hooks': path.resolve(__dirname, 'src/renderer/src/hooks'),
+        '@/assets': path.resolve(__dirname, 'src/renderer/src/assets'),
+        '@/store': path.resolve(__dirname, 'src/renderer/src/store'),
+        '@/components': path.resolve(__dirname, 'src/renderer/src/components'),
+        '@/mocks': path.resolve(__dirname, 'src/renderer/src/mocks'),
       }
     },
     plugins: [react()]
