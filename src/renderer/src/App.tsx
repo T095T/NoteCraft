@@ -5,6 +5,7 @@ import { NotesPreviewList } from './components/NotesPreviewList'
 import MarkDownEditor from './components/MarkdownEditor'
 import FloatingNoteTitle from './components/FloatingNoteTitle'
 import { useRef } from 'react'
+// import { ThemeProvider } from './theme'
 
 const App = () => {
   const contentContainerRef = useRef<HTMLDivElement>(null)
@@ -13,7 +14,8 @@ const App = () => {
   }
   return (
     <>
-      <DragabbleTopBar />
+     
+        <DragabbleTopBar />
       <RootLayout>
         <Sidebar className="p-2 border-t-2 border-yellow-500">
           <ActionButtons className="flex justify-center mt-2" />
@@ -28,6 +30,7 @@ const App = () => {
           <MarkDownEditor />
         </Content>
       </RootLayout>
+      
     </>
   )
 }

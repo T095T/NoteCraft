@@ -1,4 +1,4 @@
-## Welcome to NoteMark 👋🏻
+## Welcome to NoteCraft 
 
 NoteCraft is a **Note-taking app** that uses **Markdown** syntax to format your notes.
 

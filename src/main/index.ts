@@ -3,6 +3,7 @@ import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 import { getNotes,readNoteContent, writeNote, createNote, deleteNote } from './lib'
+import LOGO from '../../resources/LOGOO.png?asset'
 
 
 function createWindow(): void {
@@ -15,9 +16,10 @@ function createWindow(): void {
     ...(process.platform === 'linux' ? { icon } : {}),
     center: true,
     title: 'NoteCraft',
+    icon: LOGO,
     vibrancy: 'under-window',
     backgroundMaterial: 'acrylic',
-    // frame: false,
+    
 
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
