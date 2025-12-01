@@ -1,34 +1,24 @@
-# notecraft
+# 📘 NoteCraft
 
-An Electron application with React and TypeScript
+A fast, minimal, and modern desktop Markdown note-taking app built with **Electron**, **React**, and **TypeScript**.  
+Your notes are stored as plain `.md` files on your computer — simple, portable, and fully offline.
 
-## Recommended IDE Setup
+---
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+## ✨ Features
 
-## Project Setup
+- 📝 Create, edit, and delete Markdown notes  
+- ⚡ Auto-save while typing (throttled to avoid disk spam)  
+- 📂 Files stored locally at:  
+  **`~/Desktop/NoteCraft`**  
+- 🎨 Clean UI with TailwindCSS  
+- 🧠 Global state via Jotai  
+- 🔌 IPC-powered file read/write  
+- 🕒 Last-edit timestamps for every note  
+- 📑 Side list with active note highlighting  
+- 🔍 Markdown file discovery + reading  
 
-### Install
+---
 
-```bash
-$ yarn
-```
+## 🗂 Folder Structure
 
-### Development
-
-```bash
-$ yarn dev
-```
-
-### Build
-
-```bash
-# For windows
-$ yarn build:win
-
-# For macOS
-$ yarn build:mac
-
-# For Linux
-$ yarn build:linux
-```
