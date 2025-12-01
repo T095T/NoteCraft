@@ -6,8 +6,8 @@ import { createNoteAtom } from '@renderer/store'
 export const NewNoteButton = ({ ...props }: ActionButtonProps) => {
   const createNote = useSetAtom(createNoteAtom)
   
-const handleCreation=()=>{
-  createNote()
+const handleCreation= async()=>{
+  await createNote()
 }
 
   return (

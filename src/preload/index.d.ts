@@ -1,12 +1,15 @@
-import { ElectronAPI } from '@electron-toolkit/preload'
-import { GetNotes } from '@renderer/shared/types'
+import { GetNotes, ReadNoteContent, WriteNoteContent } from '@shared/types'
 
 declare global {
   interface Window {
     // electron: ElectronAPI
     context: {
-      locale:string,
-      getNotes:GetNotes
+      locale: string
+      getNotes: GetNotes
+      readNoteContent: ReadNoteContent
+      writeNote: WriteNoteContent
+      createNote: CreateNote
+      deleteNote: DeleteNote
     }
   }
 }

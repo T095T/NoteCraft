@@ -1,6 +1,7 @@
 import { contextBridge, ipcRenderer } from 'electron'
-import { electronAPI } from '@electron-toolkit/preload'
-import { getNotes } from '@/lib'
+
+import { getNotes, readNoteContent, writeNote, createNote, deleteNote } from '@/lib'
+
 
 //For frame-less application window
 contextBridge.exposeInMainWorld('windowControls', {
@@ -16,7 +17,16 @@ if (!process.contextIsolated) {
 
 try {
   contextBridge.exposeInMainWorld('context', {
-    getNotes: (...args: Parameters<typeof getNotes>) => ipcRenderer.invoke('getNotes', ...args)
+    getNotes: (...args: Parameters<typeof getNotes>) => ipcRenderer.invoke('getNotes', ...args),
+
+    readNoteContent:(...args: Parameters<typeof readNoteContent>) => ipcRenderer.invoke('readNoteContent', ...args),
+    
+
+    writeNote: (...args: Parameters<typeof writeNote>) => ipcRenderer.invoke('writeNoteContent', ...args),
+
+    createNote:(...args: Parameters<typeof createNote>) => ipcRenderer.invoke('createNote', ...args),
+
+    deleteNote:(...args: Parameters<typeof deleteNote>) => ipcRenderer.invoke('deleteNote', ...args)
   })
 } catch (error) {
   console.log(error)
